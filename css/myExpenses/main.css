@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
-*{
-    padding: 0px;
-    margin: 0px;
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
+body {
     position: relative;
     background-color: #ecf0f1;
     height: 100vh;
@@ -15,7 +15,7 @@ body{
     overflow-x: hidden;
 }
 
-button{
+button {
     background-color: #3498db;
     color: white;
     padding: 0.5rem;
@@ -23,40 +23,37 @@ button{
     cursor: pointer;
 }
 
-/*Header*/
-header{
+/* Header */
+header {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 100vw;
     overflow-x: hidden;
-
-    padding: 1.5rem 1.0rem;
+    padding: 1.5rem 1rem;
     margin-bottom: 50px;
-    
     background-color: #3498db;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.288), 3, 3;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.288), 3, 3;
 }
 
-header > section > nav > ul > li{
+header > section > nav > ul > li {
     display: inline;
-    margin: 0px 10px;
+    margin: 0 10px;
 }
 
-header > section > nav > ul > li > a{
+header > section > nav > ul > li > a {
     font-size: 1.1em;
     text-decoration: none;
     color: rgb(184, 184, 184);
 }
 
-header > section > nav > ul > li > a:hover{
+header > section > nav > ul > li > a:hover {
     color: white;
-    transition: 3 ease;
+    transition: 3s ease;
 }
 
-/*Main*/
-main{
+/* Main */
+main {
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -64,9 +61,8 @@ main{
     align-items: center;
 }
 
-/*Search bar container*/
-#serachBarContainer{
-    flex-direction: row;
+/* Search bar container */
+#serachBarContainer {
     display: flex;
     flex-wrap: wrap;
     border-radius: 10px;
@@ -77,12 +73,12 @@ main{
     margin-bottom: 20px;
 }
 
-#serachBarContainer > button{
+#serachBarContainer > button {
     font-size: 1em;
     padding: 0.8rem;
 }
 
-#searchBar{
+#searchBar {
     width: 50vw;
     height: 45px;
     padding: 0.5rem;
@@ -91,108 +87,105 @@ main{
     background-color: white;
 }
 
-/*Filters*/
-#filtersContainer{
+/* Filters */
+#filtersContainer {
     display: flex;
     gap: 10px;
     margin-bottom: 50px;
 }
 
-#filtersContainer > div{
+#filtersContainer > div {
     display: flex;
     gap: 10px;
 }
 
-#categorySelectList{
+#categorySelectList, #sortSelectList {
     width: 6vw;
     border: none;
-    border-bottom: #3498db 2px solid;
+    border-bottom: 2px solid #3498db;
     background-color: white;
 }
 
-#sortSelectList{
-    width: 6vw;
-    border: none;
-    border-bottom: #3498db 2px solid;
-    background-color: white;
-}
-
-#categorySelectList > option{
-    background-color: green;
-    color: green;
-}
-
-/*Expenses section*/
-#expensesSection{
+/* Expenses section */
+#expensesSection {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 55%;
+    width: 90%;
 }
 
-#addExpenseButton{
+#addExpenseButton {
     align-self: flex-start;
+    margin-bottom: 20px;
 }
 
-.expense-card{
+#expensesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.expense-card {
     display: flex;
     flex-direction: row;
-    width: 400px;
-    gap: 30px;
-    justify-content: center;
-
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
     padding: 1rem;
-    margin-bottom: 30px;
-
     background-color: #4aacee;
     box-shadow: 10px 7px 20px rgba(0, 0, 0, 0.075);
     border: 1px solid rgba(0, 0, 0, 0.089);
     border-radius: 10px;
+    overflow: hidden; /* Para evitar que o conteúdo extrapole o card */
 }
 
-.expense-header{
+.expense-header {
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     border-radius: 50%;
     width: 50px;
-    justify-content: center;
+    height: 50px;
+    margin-bottom: 8px;
     font-size: 1.5em;
-    align-items: center;
+}
+
+.expense-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    text-align: center;
     margin-bottom: 8px;
 }
 
-.expense-body{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 8px;
-}
-
-.expense-footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.expense-title{
-    justify-self: center;
+.expense-title {
     font-weight: bold;
     margin-bottom: 15px;
 }
 
-.expense-description{
+.expense-description {
     color: grey;
     font-size: 0.95em;
 }
 
-.expense-date{
+.expense-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.expense-date {
     margin-bottom: 15px;
 }
 
-.expense-amount{
+.expense-amount {
     color: rgb(55, 209, 55);
 }
 
-/*Add modal*/
+/* Add modal */
 #modalOverlay {
     position: fixed;
     top: 0;
@@ -213,7 +206,7 @@ main{
     background-color: white;
     width: 90%;
     max-width: 500px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: #4aacee;
     z-index: 1000;
@@ -263,7 +256,7 @@ main{
     color: black;
 }
 
-.inputGroup input {
+.inputGroup input, .inputGroup select {
     text-align: center;
     border: 1px solid #3498db;
     background-color: white;
@@ -290,6 +283,14 @@ main{
 
 /* Responsividade */
 @media (min-width: 600px) {
+    #searchBar {
+        width: 40vw;
+    }
+
+    #categorySelectList, #sortSelectList {
+        width: 10vw;
+    }
+
     .inputsContainer {
         flex-direction: row;
         flex-wrap: wrap;
@@ -304,5 +305,19 @@ main{
     .saveButton {
         flex: 1 1 100%;
         margin-top: 0;
+    }
+
+    #expensesContainer {
+        justify-content: space-between;
+    }
+
+    .expense-card {
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (min-width: 900px) {
+    .expense-card {
+        max-width: calc(33% - 20px);
     }
 }

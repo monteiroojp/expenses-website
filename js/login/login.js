@@ -2,7 +2,7 @@
 import { loginContainer, loginForm, loginUsernameInput, loginPasswordInput,  loginVisiblePassword, loginButton, loginErrorTextContainer} from "./variables.js"
 
 //Variables
-const url = 'https://personal-expenses-api-nuw7.onrender.com/api/v1/auth/login'
+const url = 'http://localhost:5000/api/v1/auth/login'
 
 //Funções
 const passwordVisibility = () => {
